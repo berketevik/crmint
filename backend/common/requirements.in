@@ -1,6 +1,10 @@
 google-cloud-logging
 google-cloud-pubsub
-Flask
-CacheControl
-gunicorn
-croniter
+# Flask 2.3.x keeps backward-compatible APIs while supporting Python 3.11
+Flask>=2.3,<3
+Werkzeug>=2.3,<3
+CacheControl>=0.12
+# Gunicorn 21.x has Python 3.11 wheels; cap to avoid the 22.x breaking changes
+gunicorn>=21,<22
+# Croniter 2.x supports Python 3.11 without the 3.x API break
+croniter>=2,<3

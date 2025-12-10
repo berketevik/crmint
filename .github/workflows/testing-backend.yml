@@ -7,14 +7,14 @@ on:
       - 'README.md'
 jobs:
   run-controller-tests:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     steps:
       # Checkout repository code
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       # Configure python
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: '3.11'
       - name: Install dependencies
         working-directory: backend
         run: |
@@ -30,14 +30,14 @@ jobs:
           fail_ci_if_error: false
           flags: backend
   run-jobs-tests:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     steps:
       # Checkout repository code
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       # Configure python
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: '3.11'
       - name: Install dependencies
         working-directory: backend
         run: |
@@ -53,4 +53,3 @@ jobs:
           working-directory: backend
           fail_ci_if_error: false
           flags: backend
-
